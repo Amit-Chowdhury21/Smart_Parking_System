@@ -18,7 +18,7 @@ Here we use the OpenCV library to detect and recognize number plates, and the Te
 
  
  
-#### Installing OpenCV in Raspberry Pi 3
+#### Step 1: Installing OpenCV in Raspberry Pi 3
 Here OpenCV library is used to detect and recognize faces. To install the OpenCV, first, update the Raspberry Pi.
 
 ### sudo apt-get update
@@ -38,7 +38,7 @@ After that, use the below command to install the OpenCV on your Raspberry Pi.
 ### pip3 install opencv-contrib-python==4.1.0.25
  
 
-#### Installing Tesseract 
+#### Step 2: Installing Tesseract 
 
 To install the Tesseract, first, configure the Debian Package (dpkg) using the below command:
 
@@ -60,14 +60,14 @@ After this, install the PYTTSX3 library for text to speech conversion using the 
 ### pip install pyttsx3
  
 
-#### Installing imutils 
+#### Step 3: Installing imutils 
 
 imutils is used to make essential image processing functions such as translation, rotation, resizing, skeletonization, and displaying Matplotlib images easier with OpenCV. Use the below command to install the imutils:
 
 ### pip3 install imutils
  
 
-#### SMTP Mail Setup for Raspberry Pi Car Plate Recognition
+#### Step 4: SMTP Mail Setup for Raspberry Pi Car Plate Recognition
 SMTP (Simple Mail Transfer Protocol) is the standard protocol for providing email services on a TCP/IP network. This server provides the ability to receive and send email messages. We are using SMTP to send a mail when the Raspberry Pi detects and recognizes a license plate.
 
  
