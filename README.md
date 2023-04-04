@@ -84,9 +84,10 @@ Now we have to edit the configure file. For that, open Configuration file using 
 
 A new window opens up and add the below lines there. Don’t forget to add your email and email password. After writting use keyboard's shift^O to save the below data in 'ssmtp.conf' file 
 
-### root=postman
+### root=postmail
 ### mailhub=smpt.gmail.com:587
 ### AuthUser=youremail@gmail.com
 ### AuthPass=youremailpassword
 ### FromLineOverride=YES
 ### UseSTARTTLS=YES
+### DEBUG=YES
