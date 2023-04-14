@@ -4,10 +4,11 @@ Using Raspberry pi
 
 Components Required:
 Raspberry pi,
+ESP32
 Rpi Camera Module,
 Ultrasonic Sensors,
 Servo Motors,
-LCD Display
+
 
 
 
