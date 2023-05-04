@@ -24,7 +24,6 @@ Here OpenCV library is used to detect and recognize faces. To install the OpenCV
 
 ### sudo apt-get update
  
-
 Then use the following commands to install the required dependencies for installing OpenCV on your Raspberry Pi.
 ### sudo apt-get install libhdf5-dev -y 
 ### sudo apt-get install libhdf5-serial-dev –y 
