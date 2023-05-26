@@ -6,10 +6,7 @@ import pytesseract
 from PIL import Image
 from picamera.array import PiRGBArray
 from picamera import PiCamera
-#import smtplib
-#server=smtplib.SMTP('smtp.gmail.com',587)
-#server.starttls()
-#server.login("Your Email ID", "Email ID Password")
+ 
 camera = PiCamera()
 camera.resolution = (640, 480)
 camera.framerate = 30
@@ -66,7 +63,7 @@ for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
                  print("Data posted successfully to ThingSpeak!")
              else:
                  print("Failed to post data to ThingSpeak. Status code:", response.status_code)
-             #server.sendmail("Sender's Email ID@gmail.com","Sender's Email ID@gmail.com",text)
+             
              cv2.imshow("Frame", image)
              cv2.imshow('Cropped',Cropped)
              cv2.waitKey(0)
