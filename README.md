@@ -1,13 +1,19 @@
 # Smart_Parking_System
 
-Using Raspberry pi
+Course Project: Cyber Physical System
+Under the Supervision: Dr.Sudhakar Modem
+
+This project presents the implementation of a Smart Parking System at the parking spots of IIT Jammu using Raspberry Pi and ESP-32 modules. The system utilizes a Raspberry Pi with a Raspi cam installed at the entrance gate to capture images of vehicle license plates. A license plate recognition algorithm, VehPlateRecogAtGate.py, is employed to extract characters from the images and upload them to the ThinkSpeak cloud.
+
+When a vehicle enters the parking area and occupies a parking slot, an ESP-32 module equipped with an ultrasonic sensor detects the presence of the vehicle and transmits the data to the cloud using the esp32_ultrasonic.ino code. The data from both the license plate recognition and ultrasonic sensor is combined to provide real-time information on the availability and occupancy status of parking slots.
+
+The system offers a user-friendly interface through a webpage, Webpage.html, where users can access the information on available and occupied parking slots. By utilizing this Smart Parking System, IIT Jammu aims to optimize parking management and enhance the overall parking experience for its staff, students, and visitors.  
 
 Components Required:
 Raspberry pi,
 ESP32
 Rpi Camera Module,
-Ultrasonic Sensors,
-Servo Motors,
+Ultrasonic Sensors
 
 
 
@@ -66,9 +72,6 @@ imutils is used to make essential image processing functions such as translation
 
 ### pip3 install imutils
  
-
-#### Step 4: SMTP Mail Setup for Raspberry Pi Car Plate Recognition
-SMTP (Simple Mail Transfer Protocol) is the standard protocol for providing email services on a TCP/IP network. This server provides the ability to receive and send email messages. We are using SMTP to send a mail when the Raspberry Pi detects and recognizes a license plate.
 
  
 
