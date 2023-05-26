@@ -1,6 +1,7 @@
 # Smart_Parking_System
 
 Course Project: Cyber Physical System
+
 Under the Supervision: Dr.Sudhakar Modem
 
 This project presents the implementation of a Smart Parking System at the parking spots of IIT Jammu using Raspberry Pi and ESP-32 modules. The system utilizes a Raspberry Pi with a Raspi cam installed at the entrance gate to capture images of vehicle license plates. A license plate recognition algorithm, VehPlateRecogAtGate.py, is employed to extract characters from the images and upload them to the ThinkSpeak cloud.
