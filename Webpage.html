@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IIT JAMMU SMART PARK</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 10px;
+        }
+
+
+
+        p {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .box-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .box-label {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+    </style>
+    <script>
+      function refreshPage() {
+        location.reload();
+      }
+
+      setInterval(refreshPage, 5000);
+        // Function to retrieve data from ThingSpeak
+        function getData(channelID, boxID, p1ID, p2ID) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var data = JSON.parse(this.responseText);
+                    var value = parseInt(data.feeds[0].field1);
+                    var box = document.getElementById(boxID);
+                    var p1 = document.getElementById(p1ID);
+                    var p2 = document.getElementById(p2ID);
+
+                    if (value === 1) {
+                        box.style.backgroundColor = 'green';
+                        p1.innerText = 'Vacant';
+                        //p2.innerText = 'p2green';
+                    } else {
+                        box.style.backgroundColor = 'red';
+                        p1.innerText = 'Occupied';
+                        //p2.innerText = 'p2red';
+                    }
+                }
+            };
+            xhttp.open("GET", "https://api.thingspeak.com/channels/" + channelID + "/feeds.json?results=1", true);
+            xhttp.send();
+        }
+        
+        // Call the getData function for each channel when the page loads
+        window.onload = function() {
+            getData("2104216", "box1", "p1", "p2");
+            getData("2149527", "box2", "p3", "p4");
+            //getData("2149528", "box3", "p5", "p6");
+        };
+
+        function updateCarNumberPlates() {
+      fetch('https://api.thingspeak.com/channels/2148107/feeds.json?api_key=HBPGHYCK8XA5VHGC')
+        .then(response => response.json())
+        .then(data => {
+          const carData = data.feeds;
+          const tableBody = document.getElementById('car-table-body');
+          tableBody.innerHTML = '';
+
+          carData.forEach(car => {
+            const carNumberPlate = car.field1;
+            const parkingSlot = car.field2;
+            const timestamp = car.created_at;
+
+
+            const row = document.createElement('tr');
+            const numberPlateCell = document.createElement('td');
+            numberPlateCell.textContent = carNumberPlate;
+            const parkingSlotCell = document.createElement('td');
+            parkingSlotCell.textContent = parkingSlot;
+            const timestampCell = document.createElement('td');
+            timestampCell.textContent = timestamp;
+
+            row.appendChild(numberPlateCell);
+            row.appendChild(parkingSlotCell);
+            row.appendChild(timestampCell);
+            tableBody.appendChild(row);
+          });
+        });
+    }
+
+    
+    updateCarNumberPlates();
+
+    </script>
+</head>
+<body>
+    <h1>IIT JAMMU SMART PARK</h1>
+    <p>Project by: Amit Chowdhury & Abhilash</p>
+    <p>Under Supervision: Dr. Sudhakar Modem</p>
+
+    <div class="container">
+        <div class="box-container">
+            <div class="box-label">Parking Slot-1</div>
+            <div id="box1" class="box">
+                <p id="p1"></p>
+                <p id="p2"></p>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="box-label">Parking Slot-2</div>
+            <div id="box2" class="box">
+                <p id="p3"></p>
+                <p id="p4"></p>
+        </div>
+        <div class="box-container">
+            <div class="box-label">Parking Slot-3</div>
+            <div id="box3" class="box">
+                <p id="p5"></p>
+                <p id="p6"></p>
+        </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Car Number Plate</th>
+        <th>Parking Slot</th>
+      </tr>
+    </thead>
+    <tbody id="car-table-body">
+      <!-- Car number plates and parking slots will be dynamically added here -->
+    </tbody>
+  </table>
+    
+</body>
+</html>
