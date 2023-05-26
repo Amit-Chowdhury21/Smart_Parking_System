@@ -42,36 +42,36 @@ Then use the following commands to install the required dependencies for install
 
 After that, use the below command to install the OpenCV on your Raspberry Pi.
 
-### pip3 install opencv-contrib-python==4.1.0.25
+#### pip3 install opencv-contrib-python==4.1.0.25
  
 
-#### Step 2: Installing Tesseract 
+### Step 2: Installing Tesseract 
 
 To install the Tesseract, first, configure the Debian Package (dpkg) using the below command:
 
-### sudo dpkg - -configure –a
+#### sudo dpkg --configure –a
  
 
 After that, install the Tesseract OCR (Optical Character Recognition) using the apt-get option.
 
-### sudo apt-get install tesseract-ocr
+#### sudo apt-get install tesseract-ocr
  
 
 After that, install the pytesseract using the pip.
 
-### pip install pytesseract
+#### pip install pytesseract
  
 
 After this, install the PYTTSX3 library for text to speech conversion using the below command:
 
-### pip install pyttsx3
+#### pip install pyttsx3
  
 
-#### Step 3: Installing imutils 
+### Step 3: Installing imutils 
 
 imutils is used to make essential image processing functions such as translation, rotation, resizing, skeletonization, and displaying Matplotlib images easier with OpenCV. Use the below command to install the imutils:
 
-### pip3 install imutils
+#### pip3 install imutils
  
 
  
