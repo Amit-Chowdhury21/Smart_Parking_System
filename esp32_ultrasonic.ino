@@ -6,9 +6,9 @@ int x1=0,x2=0,x3=0;
 
 // Set our wifi name and password
 
-const char* ssid = "AndroidAP";
+const char* ssid = "YourWifiName";
 
-const char* password = "qwertyuio";
+const char* password = "YourWifiPassword";
 
 int trigPin1 = 5;
 int echoPin1 = 18;
@@ -22,12 +22,12 @@ int echoPin3 = 19;
 int duration1,duration2,duration3;
 int distance1,distance2,distance3;
 
+// Enter the Write API key from Thingspeak.com for 3 different channels   
+String serverName1 = "http://api.thingspeak.com/update?api_key=YOUR_Write_API_KEY&field1=0";   // Channel 1
 
-String serverName1 = "http://api.thingspeak.com/update?api_key=JN4XFN7MRVOSOACS&field1=0";
+String serverName2   = "http://api.thingspeak.com/update?api_key=YOUR_Write_API_KEY&field1=0"; // Channel 2
 
-String serverName2   = "http://api.thingspeak.com/update?api_key=S2K1K01SDH3CYFLY&field1=0";
-
-String serverName3 = "http://api.thingspeak.com/update?api_key=K5GAKGJERT5LT3AD&field1=0";
+String serverName3 = "http://api.thingspeak.com/update?api_key=YOUR_Write_API_KEY&field1=0";   // Channel 3
 
 
 unsigned long lastTime = 0;
