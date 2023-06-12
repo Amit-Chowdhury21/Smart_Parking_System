@@ -12,9 +12,9 @@ The system offers a user-friendly interface through a webpage, Webpage.html, whe
 
 Components Required:
 Raspberry pi,
-ESP32
+ESP32,
 Rpi Camera Module,
-Ultrasonic Sensors
+Ultrasonic Sensors.
 
 
 
